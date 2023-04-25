@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PowerUpController : MonoBehaviour
+{
+    public ShipControl shipControl;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B)) //change to BaseShield
+        {
+            Destroy(shipControl.shield);
+            gameObject.AddComponent<BaseShield>();
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Destroy(shipControl.shield);
+            gameObject.AddComponent<DividerShield>();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Destroy(shipControl.shield);
+            gameObject.AddComponent<TeleportShield>();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Destroy(shipControl.shield);
+            gameObject.AddComponent<CursedShield>();
+        }
+    }
+}
